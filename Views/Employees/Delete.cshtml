@@ -1,0 +1,39 @@
+﻿@model ApartmentsRentalManagement.Models.Employee
+
+@{
+    ViewBag.Title = "Deleting Employee Record";
+    Layout = "~/Views/Shared/_Management.cshtml";
+}
+
+<h2 class="bold common-font blue text-center">Deleting Employee Record</h2>
+
+<hr />
+
+<h3 class="common-font blue text-center">Are you sure you want to let this employee go?</h3>
+
+<div class="containment">
+    <dl class="dl-horizontal common-font">
+        <dt>@Html.DisplayNameFor(model => model.EmployeeID)</dt>
+        <dd>@Html.DisplayFor(model => model.EmployeeID)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.EmployeeNumber)</dt>
+        <dd>@Html.DisplayFor(model => model.EmployeeNumber)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.FirstName)</dt>
+        <dd>@Html.DisplayFor(model => model.FirstName)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.LastName)</dt>
+        <dd>@Html.DisplayFor(model => model.LastName)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.EmploymentTitle)</dt>
+        <dd>@Html.DisplayFor(model => model.EmploymentTitle)</dd>
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        <div class="form-actions no-color">
+            @Html.ActionLink("Employees", "Index") ::
+            <input type="submit" value="Let this Employee Leave" class="btn btn-primary" />
+        </div>
+    }
+</div>
